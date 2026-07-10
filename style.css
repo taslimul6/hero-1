@@ -192,5 +192,67 @@ color:#575757;
     font-size: 14px;
     border: 2px solid #2563EB;
     border-radius: 5px;
+    cursor: pointer;
     
+}
+
+.p-btn button:hover{
+    background-color: #1D4ED8;
+    color: white;
+}
+
+.pro{
+    background-color: #0D1B2A;
+    color:#fff;
+}
+.pro .price p:nth-of-type(2){
+ color:#FFFFFFCC;
+}
+
+.pro .price p:first-child {
+    color: #93C5FD;
+}
+
+.pro li{
+    color:#FFFFFFCC;
+}
+
+.pro button{
+    background-color: #1D4ED8;
+    color: white;
+}
+.pro button:hover{
+    background-color: #0236c4;
+    cursor: pointer;
+    
+}
+
+footer{
+    background-color: #1E1E1E;
+}
+
+.mainfooter{
+    padding: 8vh 25vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainfooter ul{
+    display: flex;
+    gap: 20px;
+}
+.mainfooter ul li{
+    color: white;
+   list-style: none;
+   font-size: 30px;
+   cursor: pointer;
+
+}.mainfooter ul li:hover{
+    color: #1D4ED8;
+}
+
+.copyright{
+    color: white;
+    text-align: center;
+    padding-bottom: 5vh;
 }
