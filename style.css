@@ -208,6 +208,11 @@ color:#575757;
 .pro{
     background-color: #0D1B2A;
     color:#fff;
+    
+}
+
+.pro:hover{
+     transform: scale(1.05);
 }
 .pro .price p:nth-of-type(2){
  color:#FFFFFFCC;
