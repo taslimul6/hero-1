@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.clr-1{
+color:#575757;
+}
+.btn-primary{
+    background-color:#1D4ED8;
+    color: white;
+    padding: .8rem 2rem;
+    text-size:18px;
+    border: 0px;
+    border-radius: 8px;
+}
+
+
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.menu ul{
+ display: flex;
+ justify-content: space-between;
+ gap: 3rem;
+ margin-top: 1rem;;
+}
+
+.menu ul li a{
+   color:#575757;
+}
+
+.menu ul li a:hover{
+    color:#333333
+}
+
+
+
+.nav-container{
+
+    padding: 1rem 10rem;
+    background-color: white;
+}
