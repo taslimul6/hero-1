@@ -19,8 +19,12 @@ color:#575757;
     font-size:18px;
     border: 0px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
+.btn-primary:hover{
+    background-color:#4000ff;
+}
 .nav-container{
     display: flex;
     justify-content: space-between;
@@ -255,4 +259,111 @@ footer{
     color: white;
     text-align: center;
     padding-bottom: 5vh;
+}
+
+
+
+/* =========================================================
+   WORKSHOPS.CSS
+   Fully scoped to the .workshops section — no :root, no *,
+   no body/element selectors, so this cannot leak into or
+   be affected by other sections on the page.
+   ========================================================= */
+
+/* --- 1. Tokens (scoped as custom properties on .workshops) --- */
+.workshops {
+  --w-bg: #FFFFFF;
+  --w-surface: #F8FAFC;
+  --w-primary: #1D4ED8;
+  --w-heading: #111827;
+  --w-text: #575757;
+  --w-border: #E7E9EE;
+
+  --w-font-display: 'Sora', sans-serif;
+  --w-font-body: 'Inter', sans-serif;
+  --w-font-mono: 'JetBrains Mono', monospace;
+
+  --w-radius-lg: 16px;
+  --w-radius-sm: 6px;
+
+  --w-shadow-card: 0 1px 2px rgba(17,24,39,.04), 0 12px 24px -12px rgba(17,24,39,.10);
+  --w-shadow-card-hover: 0 1px 2px rgba(17,24,39,.04), 0 24px 40px -16px rgba(29,78,216,.22);
+
+  /* scoped reset, does not touch box-sizing outside this section */
+  background: var(--w-bg);
+  font-family: var(--w-font-body);
+  color: var(--w-text);
+  padding: 96px 24px;
+}
+
+.workshops *,
+.workshops *::before,
+.workshops *::after {
+  box-sizing: border-box;
+}
+
+/* --- 2. Section layout --- */
+.workshops__container { max-width: 1180px; margin: 0 auto; }
+.workshops__header { max-width: 640px; margin: 0 auto 64px; text-align: center; }
+
+.workshops__eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--w-font-mono); font-size: 13px; color: var(--w-primary);
+  background: rgba(29,78,216,.06); border: 1px solid rgba(29,78,216,.16);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 20px;
+}
+.workshops__eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--w-primary); }
+
+.workshops__title { font-family: var(--w-font-display); font-size: clamp(28px,4vw,40px); font-weight: 700; color: var(--w-heading); margin: 0 0 16px; line-height: 1.2; }
+.workshops__title span { color: var(--w-primary); }
+.workshops__subtitle { font-size: 16px; line-height: 1.65; margin: 0; color: var(--w-text); }
+
+/* --- 3. Grid --- */
+.workshops__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+@media (min-width: 900px) { .workshops__grid { grid-template-columns: repeat(4,1fr); } }
+@media (max-width: 599px) { .workshops__grid { grid-template-columns: 1fr; } }
+
+/* --- 4. Card (editor-window motif) --- */
+.workshops .workshop-card {
+  display: flex; flex-direction: column;
+  background: var(--w-bg); border: 1px solid var(--w-border);
+  border-radius: var(--w-radius-lg); overflow: hidden; box-shadow: var(--w-shadow-card);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.workshops .workshop-card:hover,
+.workshops .workshop-card:focus-within {
+  transform: translateY(-4px); box-shadow: var(--w-shadow-card-hover); border-color: rgba(29,78,216,.28);
+}
+.workshops .workshop-card:focus-within { outline: 2px solid var(--w-primary); outline-offset: 2px; }
+
+.workshops .workshop-card__bar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--w-surface); border-bottom: 1px solid var(--w-border); }
+.workshops .workshop-card__dots { display: flex; gap: 6px; }
+.workshops .workshop-card__dots span { width: 8px; height: 8px; border-radius: 50%; background: #D8DBE2; }
+.workshops .workshop-card__filename { font-family: var(--w-font-mono); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--w-text); }
+
+.workshops .workshop-card__body { padding: 20px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
+.workshops .workshop-card__level { display: flex; align-items: center; gap: 8px; font-family: var(--w-font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--w-text); }
+.workshops .workshop-card__level-dots { display: flex; gap: 4px; }
+.workshops .workshop-card__level-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--w-border); }
+.workshops .workshop-card__level-dots span.is-filled { background: var(--w-primary); }
+
+.workshops .workshop-card__title { font-family: var(--w-font-display); font-size: 18px; font-weight: 600; color: var(--w-heading); line-height: 1.35; margin: 0; }
+.workshops .workshop-card__desc { font-size: 14px; line-height: 1.6; margin: 0; flex-grow: 1; color: var(--w-text); }
+
+.workshops .workshop-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.workshops .workshop-card__tags span { font-family: var(--w-font-mono); font-size: 11px; color: var(--w-primary); background: rgba(29,78,216,.07); border-radius: var(--w-radius-sm); padding: 4px 8px; }
+
+.workshops .workshop-card__footer { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-top: 1px solid var(--w-border); gap: 10px; }
+.workshops .workshop-card__host { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.workshops .workshop-card__avatar { width: 26px; height: 26px; border-radius: 50%; background: var(--w-primary); color: #fff; font-family: var(--w-font-mono); font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.workshops .workshop-card__host-name { font-size: 12px; font-weight: 500; color: var(--w-heading); }
+.workshops .workshop-card__duration { font-family: var(--w-font-mono); font-size: 11px; white-space: nowrap; color: var(--w-text); }
+
+/* --- 5. Footnote --- */
+.workshops__note { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 48px; font-size: 14px; color: var(--w-text); }
+.workshops__note strong { color: var(--w-heading); font-weight: 600; }
+
+/* --- 6. Motion accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  .workshops .workshop-card { transition: none; }
 }
