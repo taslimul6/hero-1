@@ -263,9 +263,14 @@ footer{
 .copyright{
     color: white;
     text-align: center;
-    padding-bottom: 5vh;
+    padding: 5vh 0;
 }
-
+footer hr{
+    background: #E5E7EB;
+    height: 1px;
+    border: 0;
+    
+}
 
 
 /* =========================================================
