@@ -129,6 +129,7 @@ color:#575757;
 
 .ptext {
       text-align: center;
+      padding: 7vh 0;
 }
 
 .ptext h2{
@@ -143,4 +144,37 @@ color:#575757;
 .pricing-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 6vw;
+    
+}
+.pricing-container .pricing-box{
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding:3vw ;
+}
+
+.pricing-container .price h3{
+    font-size: 2.1vw;
+    font-weight: bold;
+    padding: 1.3vh 0;
+}
+
+.pricing-container .price p{
+    color:#575757;
+}
+
+.pricing-container hr{
+    background: #666;
+    margin: 2vh 0;
+    height: 1px;
+    border: 0;
+}
+
+.pmenu{
+    margin-left:1vw ;
+}
+
+.pmenu li{
+    line-height: 1.7rem;
+    color:#575757;
 }
