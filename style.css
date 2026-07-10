@@ -144,7 +144,7 @@ color:#575757;
 .pricing-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 6vw;
+    gap: 2vw;
     
 }
 .pricing-container .pricing-box{
@@ -164,7 +164,7 @@ color:#575757;
 }
 
 .pricing-container hr{
-    background: #666;
+    background: #E5E7EB;
     margin: 2vh 0;
     height: 1px;
     border: 0;
@@ -177,4 +177,20 @@ color:#575757;
 .pmenu li{
     line-height: 1.7rem;
     color:#575757;
+}
+
+.p-btn{
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.p-btn button{
+    background-color: white;
+    color:#2563EB;
+    width: 100%;
+    padding: 1.5vh 0;
+    font-size: 14px;
+    border: 2px solid #2563EB;
+    border-radius: 5px;
+    
 }
